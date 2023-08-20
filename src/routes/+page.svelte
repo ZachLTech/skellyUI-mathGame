@@ -1,65 +1,17 @@
 <script>
-	import '@skeletonlabs/skeleton/themes/theme-crimson.css';
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	import '../app.postcss';
-	import { AppBar } from '@skeletonlabs/skeleton';
-	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import logo from '$lib/assets/logo.png'
-	import { slide } from 'svelte/transition';
-	import { onMount, onDestroy } from 'svelte';
-	
-
-	let greetings = ['Fast.', 'Free.', 'Simple.', 'Efficient.', 'Adless.'];
-	let index = 0;
-	let roller;
-	onMount(() => {
-		roller = setInterval(() => {
-			if (index === greetings.length - 1) index = 0;
-			else index++;
-		}, 1250);
-	});
-	onDestroy(() => {
-		clearInterval(roller);
-	});
-
-
+	import Hero from "$lib/hero.svelte";
+	import Info from "$lib/InfoInView.svelte";
 </script>
 
-<AppBar>
-	<svelte:fragment slot="lead">
-		<img width="60" src={logo} alt="LOGO">
-	</svelte:fragment>
-	<svelte:fragment slot="trail">
-		<a
-			class="btn btn-lg variant-ghost-primary"
-			href="#"
-			rel="noreferrer"
-		>
-			<strong>Start</strong>
-		</a>
-	</svelte:fragment>
-</AppBar>
 
-
-<div class=" h-screen mx-auto pb-36 flex justify-center items-center">
-	<div class="space-y-1 text-center flex flex-col items-center">
-		<h1 class="h1 text-7xl">Relearn</h1>
-		<h1 class="h1">
-			{#key index}
-			<h1 transition:slide><span class=" text-7xl bg-gradient-to-br from-red-500 to-purple-800 bg-clip-text text-transparent box-decoration-clone">{greetings[index]}</span></h1>
-			{/key}
-		</h1>
-		<br>
-		<div class="flex gap-3">
-			<button on:click={() => window.open('https://github.com/ZachLTech/skellyUI-mathGame', '_blank')} class="btn btn-icon variant-filled-surface"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"><title>GitHub</title><path fill="#a6adba" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></button>
-			<button on:click={() => window.open('https://zachl.space', '_blank')}  class="btn btn-icon variant-filled-surface"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"><title>Gmail</title><path fill="#a6adba" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></button>
-		</div>
-	</div>
+<div class="bg-[url(https://wallpapers.com/images/hd/minimal-pixel-8fno4glm821z2mzx.jpg)] bg-fixed h-screen mx-auto pb-36 flex justify-center items-center">
+	<Hero />
 </div>
 
+<div class=" h-screen mx-auto flex justify-center items-center">
+	<Info />
+</div>
 
-<div class="w-screen h-screen">
-	<section>
-		<div>hello</div>
-	</section>
+<div class=" h-screen mx-auto flex justify-center items-center">
+	<Info />
 </div>
