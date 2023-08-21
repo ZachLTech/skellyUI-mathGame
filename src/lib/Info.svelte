@@ -1,20 +1,12 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
+    import calculator from '$lib/assets/calculator.png';
 </script>
 
-<div in:fade class="box">
-    <h1>Appears from nowhere</h1>
-    <p>
+<div in:fade class="p-5 flex justify-between items-center w-screen h-full">
+    <img src={calculator} width="350" alt="Calctoon">
+    <p class="p-9 ml-10">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error,
       adipisci nihil iste.
     </p>
 </div>
-
-<style>
-    .box {
-      width: 300px;
-      border: 1px solid rgb(221, 221, 221);
-      padding: 25px;
-      border-radius: 10px;
-    }
-  </style>
