@@ -3,7 +3,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	
 
-	let greetings = ['Fast.', 'Free.', 'Simple.', 'Efficient.', 'Adless.'];
+	let greetings = ['Fast.', 'Efficient.', 'Free.'];
 	let index = 0;
 	let roller;
 	onMount(() => {
